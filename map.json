@@ -198,5 +198,10 @@
 		"id" : "linux-fix-nvme-boot",
 		"path" : "src/linux/linux-fix-nvme-boot.sh",
 		"description" : "Enable the Linux inbox NVMe kernel drivers (nvme, nvme_core) in the initramfs of an offline OS disk so the guest can boot after a SCSI-to-NVMe controller migration. v2.1.4. PREVIEW - under test, not for production. NOTE: use option --run-on-repair."
+	},
+	{
+		"id" : "linux-break-nvme-boot",
+		"path" : "src/linux/linux-break-nvme-boot.sh",
+		"description" : "Fault-injection breaker paired with linux-fix-nvme-boot: removes the nvme and nvme_core kernel modules from every PRIMARY-boot initramfs image on an offline OS disk, reproducing the SCSI-to-NVMe migration boot failure so the repair can be proven end-to-end. TEST FIXTURE - PREVIEW, not for production. NOTE: use option --run-on-repair."
 	}
 ]
